@@ -14,4 +14,16 @@ pip install pymongo
 
 ## 爬虫思路
 先通过网址 `https://www.shanbay.com/api/v1/bdc/example/?type=sys&vocabulary_id=词汇编号` 遍历,
+
 发现单词后再通过网址 `https://api.shanbay.com/bdc/search/?word=待查询单词` 查询,查询完成后存储到数据库中
+
+具体请看代码中注释
+
+## 注意
+线程数别要设置太高,否则反爬机制会暂禁用 IP ,需要高效率爬虫可以自行添加代理
+
+如
+```
+proxies={"http": "http://localhost:1080"}
+res = request.get(url,proxies=proxies)
+```
