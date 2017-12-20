@@ -8,6 +8,7 @@
 ```
 pip install requests
 pip install pymongo
+pip install mysql-python DBUtils
 ```
 
 获取到的数据可以自己对`save_vocabulary_info(json_info)`中的json_info进行存储
@@ -27,3 +28,8 @@ pip install pymongo
 proxies={"http": "http://localhost:1080"}
 res = request.get(url,proxies=proxies)
 ```
+
+# 主要代码文件
+shanbaySpider.py 爬虫类
+
+converter.py  将爬取到mongoDB中的数据读取出来转换到mysql中.
